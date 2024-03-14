@@ -25,7 +25,7 @@ const HeroesFilters = () => {
 
   const renderFilters = (arr) => {
     if (arr.length === 0) {
-      return <h5 className="text-center mt-5">Отфильтрованных героев не найдено</h5>;
+      return <h5 className="text-center mt-5">Фильтров не найдено</h5>;
     }
 
     return arr.map(({ name, className, label }) => {
