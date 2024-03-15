@@ -55,7 +55,7 @@ const HeroesList = () => {
   const renderHeroesList = (arr) => {
     if (arr.length === 0) {
       return (
-        <CSSTransition timeout={0} classNames="hero">
+        <CSSTransition timeout={0} exit={false} classNames="hero">
           <h5 className="text-center mt-5">Героев пока нет</h5>
         </CSSTransition>
       );
@@ -63,7 +63,7 @@ const HeroesList = () => {
 
     return arr.map(({ id, ...props }) => {
       return (
-        <CSSTransition key={id} timeout={500} classNames="hero">
+        <CSSTransition key={id} timeout={330} appear={false} exit={false} classNames="hero">
           <HeroesListItem {...props} onDelete={() => onDeleteHero(id)} />
         </CSSTransition>
       );

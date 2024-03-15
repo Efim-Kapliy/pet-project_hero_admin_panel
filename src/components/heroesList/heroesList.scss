@@ -3,12 +3,12 @@
 }
 .hero-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 330ms ease-in;
 }
 .hero-exit {
   opacity: 1;
 }
 .hero-exit-active {
   opacity: 0;
-  transition: opacity 500ms ease-out;
+  transition: opacity 330ms ease-in;
 }
