@@ -31,7 +31,8 @@ const filtersSlice = createSlice({
       })
       .addCase(fetchFilteredHeroes.rejected, (state) => {
         state.filtersLoadingStatus = "error";
-      });
+      })
+      .addDefaultCase(() => {});
   },
 });
 
