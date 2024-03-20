@@ -1,11 +1,10 @@
 import { useHttp } from "../../hooks/http.hook";
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { createSelector } from "@reduxjs/toolkit";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { createSelector } from "reselect";
 
-import { heroDeleted } from "./heroesSlice";
-import { fetchHeroes } from "../../actions";
+import { heroDeleted, fetchHeroes } from "./heroesSlice";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
@@ -17,7 +16,7 @@ const HeroesList = () => {
     (state) => state.heroes.heroes,
     (filter, heroes) => {
       if (filter === "all") {
-        console.log("render");
+        console.log("render filter");
         return heroes;
       } else {
         return heroes.filter((item) => item.element === filter);
@@ -32,7 +31,7 @@ const HeroesList = () => {
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch(fetchHeroes(request));
+    dispatch(fetchHeroes());
     // eslint-disable-next-line
   }, []);
 
