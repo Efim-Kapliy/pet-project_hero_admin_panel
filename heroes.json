@@ -29,6 +29,24 @@
       "name": "Игорь",
       "description": "Маг воздуха",
       "element": "wind"
+    },
+    {
+      "id": "03742929-68d4-4fbb-9124-25ebade9f18e",
+      "name": "Тестовый агент",
+      "description": "Шпион 100 уровня",
+      "element": "earth"
+    },
+    {
+      "id": "4443d49e-3e99-4e93-bc46-b1f04c9bfb4f",
+      "name": "Серый",
+      "description": "Звезда Тик-тока",
+      "element": "earth"
+    },
+    {
+      "id": "e39221ce-01c5-42e8-afe3-82d6b99f3823",
+      "name": "Самсон",
+      "description": "Мастер лить воду",
+      "element": "water"
     }
   ],
   "filters": [
