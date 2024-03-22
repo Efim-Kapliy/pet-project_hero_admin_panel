@@ -46,7 +46,6 @@ export const filterHeroesSelector = createSelector(
   selectAll,
   (filter, heroes) => {
     if (filter === "all") {
-      console.log("render filter");
       return heroes;
     } else {
       return heroes.filter((item) => item.element === filter);

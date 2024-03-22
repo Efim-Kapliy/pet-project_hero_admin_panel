@@ -37,40 +37,45 @@
       "element": "earth"
     },
     {
-      "id": "4443d49e-3e99-4e93-bc46-b1f04c9bfb4f",
-      "name": "Серый",
-      "description": "Звезда Тик-тока",
-      "element": "earth"
-    },
-    {
       "id": "747cc205-10e0-4fec-a522-94a9172073f6",
       "name": "Самсон",
       "description": "Лить в воду в уши",
       "element": "water"
+    },
+    {
+      "id": "ad380050-3e07-4637-84ea-3bced1c1e567",
+      "name": "Серый",
+      "description": "Тик-токер",
+      "element": "earth"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Все",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Огонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Ветер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
       "className": "btn-secondary"
