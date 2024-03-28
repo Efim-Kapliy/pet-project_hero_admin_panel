@@ -1,40 +1,39 @@
-import { useHttp } from "../../hooks/http.hook";
-import { useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useMemo } from "react";
+import { useSelector } from "react-redux";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import { heroDeleted, fetchHeroes, filterHeroesSelector } from "./heroesSlice";
+import { useGetHeroesQuery, useDeleteHeroMutation } from "../../api/apiSlice";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
 import "./heroesList.scss";
 
 const HeroesList = () => {
-  const filteredHeroes = useSelector(filterHeroesSelector);
+  const { data: heroes = [], isLoading, isFetching, isError, error } = useGetHeroesQuery();
+  const [deleteHero] = useDeleteHeroMutation();
 
-  const heroesLoadingStatus = useSelector((state) => state.heroes.heroesLoadingStatus);
-  const dispatch = useDispatch();
-  const { request } = useHttp();
+  const activeFilter = useSelector((state) => state.filters.activeFilter);
 
-  useEffect(() => {
-    dispatch(fetchHeroes());
-    // eslint-disable-next-line
-  }, []);
+  const filteredHeroes = useMemo(() => {
+    const filteredHeroes = heroes.slice();
+
+    if (activeFilter === "all") {
+      return filteredHeroes;
+    } else {
+      return filteredHeroes.filter((item) => item.element === activeFilter);
+    }
+  }, [heroes, activeFilter]);
 
   const onDeleteHero = useCallback(
-    (id) => {
-      request(`http://localhost:3001/heroes/${id}`, "DELETE")
-        .then(dispatch(heroDeleted(id)))
-        .catch((err) => console.log(err));
-    },
-
+    (id) => deleteHero(id),
     // eslint-disable-next-line
-    [request]
+    []
   );
 
-  if (heroesLoadingStatus === "loading") {
+  if (isLoading || isFetching) {
     return <Spinner />;
-  } else if (heroesLoadingStatus === "error") {
+  } else if (isError) {
+    console.log(error);
     return <h5 className="text-center mt-5">Ошибка загрузки</h5>;
   }
 

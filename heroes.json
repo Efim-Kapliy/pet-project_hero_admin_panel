@@ -23,30 +23,6 @@
       "name": "Первый герой",
       "description": "Первый герой в рейтинге!",
       "element": "fire"
-    },
-    {
-      "id": "4fc8a984-6a70-4160-9972-4c800b78e843",
-      "name": "Игорь",
-      "description": "Маг воздуха",
-      "element": "wind"
-    },
-    {
-      "id": "03742929-68d4-4fbb-9124-25ebade9f18e",
-      "name": "Тестовый агент",
-      "description": "Шпион 100 уровня",
-      "element": "earth"
-    },
-    {
-      "id": "747cc205-10e0-4fec-a522-94a9172073f6",
-      "name": "Самсон",
-      "description": "Лить в воду в уши",
-      "element": "water"
-    },
-    {
-      "id": "ad380050-3e07-4637-84ea-3bced1c1e567",
-      "name": "Серый",
-      "description": "Тик-токер",
-      "element": "earth"
     }
   ],
   "filters": [
